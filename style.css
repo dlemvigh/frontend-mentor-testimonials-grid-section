@@ -11,5 +11,140 @@
 }
 
 body {
-    font-family: "Barlow Semo Condensed", sans-serif;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    background-color: var(--color-light-blue);
+    color: var(--color-light-grey);
+
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.cards {
+    display: grid;
+    row-gap: 24px;
+    column-gap: 30px;
+}
+.card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 32px;
+
+    background-color: white;
+
+    background-color: var(--color-background);
+    
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+@media (width < 768px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (width >= 768px) {
+    .cards {
+        max-width: 800px;
+        grid-template-columns: 1fr 1fr;
+        margin: 2rem;
+    }
+    .card-wide {
+        grid-column: span 2;
+    }
+    
+    .card-tall {
+        grid-row: span 2;
+    }        
+}
+@media (width > 1200px) {
+    .cards {
+        max-width: min(1100px);
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}
+
+
+.card-color-purple {
+    background-color: var(--color-purple);
+    color: var(--color-white);
+}
+
+.author {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 16px;
+    row-gap: 4px;
+}
+
+.author-avatar {
+    grid-row: span 2;
+    border-radius: 50%;
+    height: 28px;
+    width: 28px;
+
+    border: 2px solid var(--color-outline)
+}
+
+.author-name {
+    font-size: 13px;
+    line-height: 13px;    
+    color: var(--color-headings);
+}
+
+.author-title {
+    font-size: 11px;
+    line-height: 11px;
+    color: var(--color-text);
+    opacity: 50%;
+}
+
+.card-heading {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-headings);
+}
+.card-testimonial {
+    font-size: 13px;
+    line-height: 18px;    
+    color: var(--color-text);
+    opacity: 70%;
+}
+.card-watermark {
+    background-image: url('images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position-x: 80%;
+    background-position-y: 0%;
+}
+.color-scheme-purple {
+    --color-background: var(--color-purple);
+    --color-headings: var(--color-white);
+    --color-text: var(--color-light-grey);
+    --color-outline: var(--color-light-purple);
+}
+.color-scheme-grey {
+    --color-background: var(--color-grey);
+    --color-headings: var(--color-white);
+    --color-text: var(--color-light-grey);
+}
+.color-scheme-white {
+    --color-background: var(--color-white);
+    --color-headings: var(--color-grey);
+    --color-text: var(--color-grey);
+    --color-outline: var(--color-light-purple);
+}
+.color-scheme-black {
+    --color-background: var(--color-dark-grey);
+    --color-headings: var(--color-white);
+    --color-text: var(--color-white);
+    --color-outline: var(--color-light-purple);
 }
